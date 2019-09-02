@@ -1,0 +1,21 @@
+version: "3.0"
+services:
+  JavaScript:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+          - GIT_REPO
+          - MONDB_URI
+          - PORT
+          - APP_HOME
+    image: w_a:v1
+    container_name: web_app
+    ports:
+      - 3000:3000 
+    depends_on:
+      - database
+  database:
+    image: mongo
+    ports:
+      - "27017:27017"
