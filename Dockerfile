@@ -6,7 +6,8 @@ ENV PORT=3000
 ENV APP_HOME=/home/app
 
 RUN apt-get update && \
-    apt-get install -y git 
+    apt-get install -y git \
+    apt-get install nano
 
 RUN mkdir ${APP_HOME}
 WORKDIR ${APP_HOME}
